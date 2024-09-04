@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1hkl5ajgqrst"]
+
+[ext_resource type="Script" path="res://hello.gd" id="1_ubfod"]
+[ext_resource type="Theme" uid="uid://bkhm7mblj1udd" path="res://BigFont.tres" id="2_iemn4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7imh1"]
+font_size = 40
+
+[node name="Hello" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 2.0
+offset_right = 7.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ubfod")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 50.0
+offset_right = 758.0
+offset_bottom = 223.0
+label_settings = SubResource("LabelSettings_7imh1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 350.0
+offset_right = 371.0
+offset_bottom = 437.0
+theme = ExtResource("2_iemn4")
+text = "Show"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 340.0
+offset_right = 955.0
+offset_bottom = 427.0
+theme = ExtResource("2_iemn4")
+text = "Clear"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

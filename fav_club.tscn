@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfw0b4c7wyqst"]
+
+[ext_resource type="Theme" uid="uid://bkhm7mblj1udd" path="res://BigFont.tres" id="1_cecwg"]
+[ext_resource type="Script" path="res://fav_club.gd" id="1_q4kbl"]
+
+[node name="FavClub" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q4kbl")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 58.0
+offset_right = 691.0
+offset_bottom = 297.0
+theme = ExtResource("1_cecwg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Show_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 401.0
+offset_right = 277.0
+offset_bottom = 518.0
+theme = ExtResource("1_cecwg")
+text = "Show"
+
+[node name="Clear_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 396.0
+offset_right = 631.0
+offset_bottom = 513.0
+theme = ExtResource("1_cecwg")
+text = "Clear"
+
+[node name="Exit_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 781.0
+offset_top = 398.0
+offset_right = 989.0
+offset_bottom = 502.0
+theme = ExtResource("1_cecwg")
+text = "Exit"
+
+[connection signal="pressed" from="Show_btn" to="." method="_on_show_btn_pressed"]
+[connection signal="pressed" from="Clear_btn" to="." method="_on_clear_btn_pressed"]
+[connection signal="pressed" from="Exit_btn" to="." method="_on_exit_btn_pressed"]
