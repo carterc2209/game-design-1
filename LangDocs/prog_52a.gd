@@ -3,8 +3,8 @@ extends Control
 
 
 func _on_calculate_pressed() -> void:
-	var length = int($Lengthtxt.text)
-	var width = int($Widthtxt.text)
+	var length = int($LengthTxt.text)
+	var width = int($WidthTxt.text)
 	var area = length * width
 	var perimeter = 2 * length + 2 * width
 	$Area.text = "Area: " + str(area)
