@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjof3np4nh5u6"]
+
+[ext_resource type="Theme" uid="uid://bkhm7mblj1udd" path="res://BigFont.tres" id="1_pct2h"]
+[ext_resource type="Script" path="res://LangDocs/prog_52a.gd" id="1_u2q8p"]
+
+[node name="Prog52a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u2q8p")
+
+[node name="Length" type="Label" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 136.0
+offset_right = 412.0
+offset_bottom = 287.0
+theme = ExtResource("1_pct2h")
+text = "Length:"
+
+[node name="Width" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 246.0
+offset_right = 422.0
+offset_bottom = 397.0
+theme = ExtResource("1_pct2h")
+text = "Width:"
+
+[node name="Area" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 319.0
+offset_right = 1151.0
+offset_bottom = 446.0
+theme = ExtResource("1_pct2h")
+text = "Area:"
+horizontal_alignment = 1
+
+[node name="Perimeter" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 461.0
+offset_right = 1151.0
+offset_bottom = 588.0
+theme = ExtResource("1_pct2h")
+text = "Perimeter:"
+horizontal_alignment = 1
+
+[node name="LengthTxt" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 114.0
+offset_right = 1054.0
+offset_bottom = 207.0
+
+[node name="WidthTxt" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 229.0
+offset_right = 1037.0
+offset_bottom = 314.0
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 549.0
+offset_right = 1149.0
+offset_bottom = 646.0
+theme = ExtResource("1_pct2h")
+text = "Exit"
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 557.0
+offset_right = 717.0
+offset_bottom = 648.0
+theme = ExtResource("1_pct2h")
+text = "Clear"
+
+[node name="Calculate" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 548.0
+offset_right = 223.0
+offset_bottom = 652.0
+theme = ExtResource("1_pct2h")
+text = "Calculate"
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="Calculate" to="." method="_on_calculate_pressed"]
