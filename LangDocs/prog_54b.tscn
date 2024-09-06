@@ -1,0 +1,102 @@
+[gd_scene load_steps=4 format=3 uid="uid://lmhjoqea2vw0"]
+
+[ext_resource type="Theme" uid="uid://bkhm7mblj1udd" path="res://BigFont.tres" id="1_014bp"]
+[ext_resource type="Script" path="res://LangDocs/prog_54b.gd" id="1_bhycv"]
+
+[sub_resource type="Theme" id="Theme_25ovn"]
+default_font_size = 50
+
+[node name="Prog_54b" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bhycv")
+
+[node name="Calc" type="Button" parent="."]
+layout_mode = 0
+offset_top = 564.0
+offset_right = 235.0
+offset_bottom = 644.0
+theme = ExtResource("1_014bp")
+text = "Calculate"
+
+[node name="Rst" type="Button" parent="."]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 568.0
+offset_right = 694.0
+offset_bottom = 648.0
+theme = ExtResource("1_014bp")
+text = "Reset"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 914.0
+offset_top = 572.0
+offset_right = 1149.0
+offset_bottom = 652.0
+theme = ExtResource("1_014bp")
+text = "Quit"
+
+[node name="Sum" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 374.0
+offset_right = 457.0
+offset_bottom = 507.0
+theme = ExtResource("1_014bp")
+text = "Sum"
+horizontal_alignment = 1
+
+[node name="Avg" type="Label" parent="."]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 378.0
+offset_right = 1059.0
+offset_bottom = 511.0
+theme = ExtResource("1_014bp")
+text = "Average"
+horizontal_alignment = 1
+
+[node name="Opt1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 139.0
+offset_right = 451.0
+offset_bottom = 206.0
+
+[node name="Opt2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 141.0
+offset_right = 1075.0
+offset_bottom = 208.0
+
+[node name="Opt3" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 302.0
+offset_right = 459.0
+offset_bottom = 369.0
+
+[node name="Opt4" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 636.0
+offset_top = 308.0
+offset_right = 1064.0
+offset_bottom = 375.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1161.0
+offset_bottom = 117.0
+theme = SubResource("Theme_25ovn")
+text = "Put 4 3 digit numbers in each box"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Calc" to="." method="_on_calc_pressed"]
+[connection signal="pressed" from="Rst" to="." method="_on_rst_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
