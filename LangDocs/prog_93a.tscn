@@ -40,7 +40,7 @@ offset_bottom = 653.0
 theme = ExtResource("2_mbr5i")
 text = "Clear"
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="Watts" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 141.0
 offset_top = 92.0
@@ -63,7 +63,18 @@ offset_top = 317.0
 offset_right = 1149.0
 offset_bottom = 414.0
 theme = ExtResource("3_3ux6u")
-text = "Total"
+text = "Total:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Late" type="Label" parent="."]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 405.0
+offset_right = 1147.0
+offset_bottom = 502.0
+theme = ExtResource("3_3ux6u")
+text = "If Paid Late:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
