@@ -1,0 +1,105 @@
+[gd_scene load_steps=4 format=3 uid="uid://di3lflf1u2ips"]
+
+[ext_resource type="Script" path="res://LangDocs/prog_82a.gd" id="1_tsxlq"]
+[ext_resource type="Theme" uid="uid://bkhm7mblj1udd" path="res://BigFont.tres" id="2_wt7t4"]
+[ext_resource type="Theme" uid="uid://os4yjvatm7cf" path="res://Button.tres" id="3_sonl7"]
+
+[node name="Prog_82a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tsxlq")
+
+[node name="Limit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 62.0
+offset_right = 921.0
+offset_bottom = 155.0
+
+[node name="Speed" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 222.0
+offset_right = 921.0
+offset_bottom = 315.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 2.0
+offset_right = 930.0
+offset_bottom = 59.0
+theme = ExtResource("2_wt7t4")
+text = "Speed limit"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 166.0
+offset_right = 930.0
+offset_bottom = 223.0
+theme = ExtResource("2_wt7t4")
+text = "Vehicle Speed"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 318.0
+offset_right = 926.0
+offset_bottom = 453.0
+theme = ExtResource("2_wt7t4")
+text = "Fine:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fine" type="Label" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 412.0
+offset_right = 930.0
+offset_bottom = 517.0
+theme = ExtResource("2_wt7t4")
+text = "$"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Calc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 554.0
+offset_right = 224.0
+offset_bottom = 648.0
+theme = ExtResource("3_sonl7")
+text = "Calculate"
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 556.0
+offset_right = 704.0
+offset_bottom = 650.0
+theme = ExtResource("3_sonl7")
+text = "Clear"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 936.0
+offset_top = 558.0
+offset_right = 1156.0
+offset_bottom = 652.0
+theme = ExtResource("3_sonl7")
+text = "Exit"
+
+[connection signal="pressed" from="Calc" to="." method="_on_calc_pressed"]
+[connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
