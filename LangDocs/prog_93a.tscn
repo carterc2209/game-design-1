@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://iwt4augtshiy"]
+
+[ext_resource type="Script" path="res://LangDocs/prog_93a.gd" id="1_60gi8"]
+[ext_resource type="Theme" uid="uid://os4yjvatm7cf" path="res://Button.tres" id="2_mbr5i"]
+[ext_resource type="Theme" uid="uid://bkhm7mblj1udd" path="res://BigFont.tres" id="3_3ux6u"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_60gi8")
+
+[node name="Calc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 541.0
+offset_right = 293.0
+offset_bottom = 655.0
+theme = ExtResource("2_mbr5i")
+text = "Calculate"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 875.0
+offset_top = 539.0
+offset_right = 1164.0
+offset_bottom = 653.0
+theme = ExtResource("2_mbr5i")
+text = "Quit"
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 539.0
+offset_right = 737.0
+offset_bottom = 653.0
+theme = ExtResource("2_mbr5i")
+text = "Clear"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 92.0
+offset_right = 958.0
+offset_bottom = 213.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 97.0
+theme = ExtResource("3_3ux6u")
+text = "Kilowatts Used:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Total" type="Label" parent="."]
+layout_mode = 0
+offset_left = -11.0
+offset_top = 317.0
+offset_right = 1149.0
+offset_bottom = 414.0
+theme = ExtResource("3_3ux6u")
+text = "Total"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Surcharge" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 218.0
+offset_right = 577.0
+offset_bottom = 338.0
+theme = ExtResource("3_3ux6u")
+text = "Surcharge:"
+
+[node name="City" type="Label" parent="."]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 220.0
+offset_right = 1154.0
+offset_bottom = 340.0
+theme = ExtResource("3_3ux6u")
+text = "City Tax:"
+
+[connection signal="pressed" from="Calc" to="." method="_on_calc_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]

@@ -1,5 +1,8 @@
 extends Control
 
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+
 func _on_calc_pressed() -> void:
 	var rate = float($Watts.text)
 	var sur = float(rate * .1)
