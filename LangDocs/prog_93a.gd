@@ -10,13 +10,14 @@ func _on_calc_pressed() -> void:
 	var sur = float(rate * .1)
 	var cty = float(rate * .03)
 	var ttl = rate + sur + cty
-	var late = ttl + (ttl * 1.04)
-	($Total.text) = "Total: %.3f" % ttl
-	($City.text) = "City Tax: %.3f" % cty
-	($Surcharge.text) = "Surcharge:" + str(sur)
-	($Late.text) = str(late)
+	var late = (ttl * 1.04)
+	($Total.text) = "Total: %.2f" % ttl
+	($City.text) = "City Tax: %.2f" % cty
+	($Surcharge.text) = "Surcharge: %.2f" % sur
+	($Late.text) = "If paid late: %.2f" % late
 
 func _on_clear_pressed() -> void:
 	($City.text) = "City Tax:"
 	($Surcharge.text) = "Surcharge:"
 	($Total.text) = "Total:"
+	($Late.text) = "If payed late:"
