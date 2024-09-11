@@ -1,7 +1,5 @@
 extends Control
 
-
-
 func _on_calculate_pressed() -> void:
 	var length = int($LengthTxt.text)
 	var width = int($WidthTxt.text)
@@ -19,7 +17,6 @@ func _on_clear_pressed() -> void:
 	$WidthTxt.text = ""
 	$Area.text = ""
 	$Perimeter.text = ""
-
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
