@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnt4j22eulj4d"]
+
+[ext_resource type="Theme" uid="uid://os4yjvatm7cf" path="res://Button.tres" id="1_achso"]
+[ext_resource type="Script" path="res://LP4/lp_4_4.gd" id="1_uxmaq"]
+[ext_resource type="Theme" uid="uid://bkhm7mblj1udd" path="res://BigFont.tres" id="2_ba20v"]
+
+[node name="LP4-4" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uxmaq")
+
+[node name="Calc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 563.0
+offset_right = 254.0
+offset_bottom = 654.0
+theme = ExtResource("1_achso")
+text = "Calculate"
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 559.0
+offset_right = 701.0
+offset_bottom = 650.0
+theme = ExtResource("1_achso")
+text = "Clear"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 898.0
+offset_top = 561.0
+offset_right = 1150.0
+offset_bottom = 652.0
+theme = ExtResource("1_achso")
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 50.0
+theme = ExtResource("2_ba20v")
+text = "Enter the car's model number:"
+horizontal_alignment = 1
+
+[node name="CarNum" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 50.0
+offset_right = 1161.0
+offset_bottom = 158.0
+
+[node name="Answer" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 212.0
+offset_right = 1156.0
+offset_bottom = 450.0
+theme = ExtResource("2_ba20v")
+
+[connection signal="pressed" from="Calc" to="." method="_on_calc_pressed"]
+[connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
