@@ -1,0 +1,112 @@
+[gd_scene load_steps=4 format=3 uid="uid://067f14mbgrb0"]
+
+[ext_resource type="Script" path="res://LP4/lp_4_2.gd" id="1_qpq4b"]
+[ext_resource type="Theme" uid="uid://bkhm7mblj1udd" path="res://BigFont.tres" id="2_y140h"]
+[ext_resource type="Theme" uid="uid://os4yjvatm7cf" path="res://Button.tres" id="3_wveqy"]
+
+[node name="LP4-2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qpq4b")
+
+[node name="Weight" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 550.0
+offset_right = 1150.0
+offset_bottom = 59.0
+
+[node name="Length" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 121.0
+offset_right = 1146.0
+offset_bottom = 180.0
+
+[node name="Width" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 230.0
+offset_right = 1153.0
+offset_bottom = 289.0
+
+[node name="Height" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 327.0
+offset_right = 1150.0
+offset_bottom = 380.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 582.0
+offset_bottom = 100.0
+theme = ExtResource("2_y140h")
+text = "Enter package weight in kilograms"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 119.0
+offset_right = 584.0
+offset_bottom = 219.0
+theme = ExtResource("2_y140h")
+text = "Enter package length in centimeters"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 225.0
+offset_right = 586.0
+offset_bottom = 325.0
+theme = ExtResource("2_y140h")
+text = "Enter package width in centimeters"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_top = 325.0
+offset_right = 574.0
+offset_bottom = 425.0
+theme = ExtResource("2_y140h")
+text = "Enter package height in centimeters"
+
+[node name="Answer" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 378.0
+offset_right = 1162.0
+offset_bottom = 547.0
+
+[node name="Calc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 572.0
+offset_right = 233.0
+offset_bottom = 650.0
+theme = ExtResource("3_wveqy")
+text = "Calculate"
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 574.0
+offset_right = 695.0
+offset_bottom = 652.0
+theme = ExtResource("2_y140h")
+text = "Clear"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 574.0
+offset_right = 1156.0
+offset_bottom = 652.0
+theme = ExtResource("2_y140h")
+text = "Quit"
+
+[connection signal="pressed" from="Calc" to="." method="_on_calc_pressed"]
+[connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
