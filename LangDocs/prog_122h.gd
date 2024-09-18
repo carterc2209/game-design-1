@@ -5,8 +5,8 @@ func _on_calc_pressed() -> void:
 	for num in range(1, 21):
 		var numsquared = num**2    # pow(num, 2)
 		var numsqrt = sqrt(num)
-		var cubed = pow(num, 1/3)
-		var fourthroot = float(pow(num, 1/4))
+		var cubed = ""
+		var fourthroot = ""
 		var line = "%d    %d    %.4f    %d    %.4f" % [num, numsquared, numsqrt, cubed, fourthroot]
 		$ItemList.add_item(line)
 
