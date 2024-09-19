@@ -7,9 +7,9 @@ func _on_calc_pressed() -> void:
 	$ItemList.add_item("Number")
 	# range(stop)
 	# range(start, stop)
-	# ramge(start, stop, step)
+	# range(start, stop, step)
 	# the 'stop' number is excluded, so add 1 if needed.
-	for num in range (2, 36 + 1, 2):
+	for num in range (2, 36 + 2, 4):
 		var line = str(num)
 		$ItemList.add_item(line)
 
