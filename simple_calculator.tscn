@@ -1,0 +1,132 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwvlhbl7opj8p"]
+
+[ext_resource type="Script" path="res://simple_calculator.gd" id="1_md57b"]
+[ext_resource type="Theme" uid="uid://bkhm7mblj1udd" path="res://BigFont.tres" id="2_pwll7"]
+[ext_resource type="Theme" uid="uid://os4yjvatm7cf" path="res://Button.tres" id="3_7yx15"]
+
+[node name="SimpleCalculator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_md57b")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 351.0
+offset_bottom = 97.0
+theme = ExtResource("2_pwll7")
+text = "Number 1:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 78.0
+offset_right = 353.0
+offset_bottom = 175.0
+theme = ExtResource("2_pwll7")
+text = "Number 2:"
+
+[node name="numOne" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 2.0
+offset_right = 1152.0
+offset_bottom = 63.0
+
+[node name="numTwo" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 75.0
+offset_right = 1158.0
+offset_bottom = 136.0
+
+[node name="Add" type="Button" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 154.0
+offset_right = 274.0
+offset_bottom = 223.0
+theme = ExtResource("3_7yx15")
+text = "+"
+
+[node name="Sub" type="Button" parent="."]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 154.0
+offset_right = 690.0
+offset_bottom = 223.0
+theme = ExtResource("3_7yx15")
+text = "-"
+
+[node name="Mult" type="Button" parent="."]
+layout_mode = 0
+offset_left = 862.0
+offset_top = 148.0
+offset_right = 1131.0
+offset_bottom = 217.0
+theme = ExtResource("3_7yx15")
+text = "*"
+
+[node name="DVD" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 276.0
+offset_right = 271.0
+offset_bottom = 345.0
+theme = ExtResource("3_7yx15")
+text = "/"
+
+[node name="Pow" type="Button" parent="."]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 272.0
+offset_right = 691.0
+offset_bottom = 341.0
+theme = ExtResource("3_7yx15")
+text = "**"
+
+[node name="Mod" type="Button" parent="."]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 281.0
+offset_right = 1141.0
+offset_bottom = 350.0
+theme = ExtResource("3_7yx15")
+text = "MOD"
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 586.0
+offset_right = 534.0
+offset_bottom = 655.0
+theme = ExtResource("3_7yx15")
+text = "Clear"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 603.0
+offset_top = 581.0
+offset_right = 1155.0
+offset_bottom = 650.0
+theme = ExtResource("3_7yx15")
+text = "Quit"
+
+[node name="Out" type="Label" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 359.0
+offset_right = 1149.0
+offset_bottom = 569.0
+
+[connection signal="pressed" from="Add" to="." method="_on_add_pressed"]
+[connection signal="pressed" from="Sub" to="." method="_on_sub_pressed"]
+[connection signal="pressed" from="Mult" to="." method="_on_mult_pressed"]
+[connection signal="pressed" from="DVD" to="." method="_on_dvd_pressed"]
+[connection signal="pressed" from="Pow" to="." method="_on_pow_pressed"]
+[connection signal="pressed" from="Mod" to="." method="_on_mod_pressed"]
+[connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
