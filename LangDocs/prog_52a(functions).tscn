@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://yln16k7oplgs"]
+
+[ext_resource type="Script" path="res://prog_52a(functions).gd" id="1_hbkmi"]
+[ext_resource type="Theme" uid="uid://os4yjvatm7cf" path="res://Button.tres" id="2_msnpq"]
+[ext_resource type="Theme" uid="uid://bkhm7mblj1udd" path="res://BigFont.tres" id="3_qbnbg"]
+
+[node name="Prog52A(Functions)" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hbkmi")
+
+[node name="Calc" type="Button" parent="."]
+layout_mode = 0
+offset_top = 587.0
+offset_right = 310.0
+offset_bottom = 648.0
+theme = ExtResource("2_msnpq")
+text = "Calculate"
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 586.0
+offset_right = 731.0
+offset_bottom = 647.0
+theme = ExtResource("2_msnpq")
+text = "Clear"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 588.0
+offset_right = 1150.0
+offset_bottom = 649.0
+theme = ExtResource("2_msnpq")
+text = "Quit"
+
+[node name="Label1" type="Label" parent="."]
+layout_mode = 0
+offset_right = 674.0
+offset_bottom = 151.0
+theme = ExtResource("3_qbnbg")
+text = "Length:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 170.0
+offset_right = 546.0
+offset_bottom = 361.0
+theme = ExtResource("3_qbnbg")
+text = "Width:"
+
+[node name="L" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 4.0
+offset_right = 1093.0
+offset_bottom = 54.0
+
+[node name="W" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 176.0
+offset_right = 1091.0
+offset_bottom = 226.0
+
+[node name="Out" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 283.0
+offset_right = 1152.0
+offset_bottom = 572.0
+theme = ExtResource("3_qbnbg")
+
+[connection signal="pressed" from="Calc" to="." method="_on_calc_pressed"]
+[connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
