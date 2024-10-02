@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://plt_world_1.gd" id="1_ts242"]
 [ext_resource type="PackedScene" uid="uid://clmxolsg87707" path="res://plt_player.tscn" id="2_1bdqt"]
-[ext_resource type="PackedScene" uid="uid://dpeiq2hfamtmi" path="res://interact.tscn" id="3_u7ejn"]
+[ext_resource type="PackedScene" uid="uid://dovj072muk1g2" path="res://better_interact.tscn" id="4_q8ae6"]
 [ext_resource type="PackedScene" uid="uid://cnlhp7i3r0ql" path="res://dragable.tscn" id="4_vd74m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o13tb"]
@@ -19,7 +19,7 @@ position = Vector2(-48, 56)
 [node name="World" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World"]
-polygon = PackedVector2Array(3, -219, 1416, -158, 1335, -80, 6, -99, 4, 293, 67, 339, 135, 263, 195, 377, 252, 320, 326, 371, 356, 246, 413, 251, 442, 377, 488, 354, 568, 331, 613, 391, 689, 398, 771, 404, 841, 326, 933, 386, 1042, 286, 1117, 331, 1174, 403, 1332, 406, 1348, -124, 1411, -124, 1422, 756, -150, 743, -95, -206)
+polygon = PackedVector2Array(3, -219, 1416, -158, 1335, -80, 6, -99, 4, 293, 67, 339, 112, 232, 185, 221, 237, 256, 174, 353, 229, 412, 346, 350, 294, 262, 395, 215, 478, 256, 383, 353, 488, 354, 539, 232, 585, 215, 618, 350, 688, 341, 761, 341, 760, 243, 816, 204, 903, 217, 949, 314, 933, 386, 1042, 286, 1033, 212, 1138, 161, 1216, 200, 1268, 251, 1224, 328, 1170, 330, 1173.55, 533.58, -95, 519, -103, 739, -10, 739, 14, 603, 70, 648, 43, 720, 216.747, 721.685, 201, 587, 308, 603, 324, 693, 468, 656, 342.392, 722.904, 529, 757, 759, 595, 807, 637, 818, 779, 882, 723, 871, 677, 946, 611, 1042, 661, 972.455, 729.016, 1177, 731, 1349, 733, 1348, -124, 1411, -124, 1422, 756, 1434, 942, -149, 891, -150, 743, -95, -206)
 
 [node name="Polygon2D" type="Polygon2D" parent="World/CollisionPolygon2D"]
 
@@ -35,8 +35,14 @@ position = Vector2(-0.250003, -4.76837e-07)
 scale = Vector2(59.5, 16)
 texture = SubResource("PlaceholderTexture2D_j68mf")
 
-[node name="Interact" parent="." instance=ExtResource("3_u7ejn")]
-position = Vector2(690, 344)
-
 [node name="Dragable" parent="." instance=ExtResource("4_vd74m")]
 position = Vector2(326, 191)
+
+[node name="BetterInteract" parent="." instance=ExtResource("4_q8ae6")]
+position = Vector2(655, 165)
+
+[node name="BetterInteract2" parent="." instance=ExtResource("4_q8ae6")]
+position = Vector2(655, 84)
+
+[node name="Dragable2" parent="." instance=ExtResource("4_vd74m")]
+position = Vector2(683, 439)
