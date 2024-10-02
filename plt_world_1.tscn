@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cg16cyrvj10v5"]
+[gd_scene load_steps=7 format=3 uid="uid://cg16cyrvj10v5"]
 
 [ext_resource type="Script" path="res://plt_world_1.gd" id="1_ts242"]
 [ext_resource type="PackedScene" uid="uid://clmxolsg87707" path="res://plt_player.tscn" id="2_1bdqt"]
+[ext_resource type="PackedScene" uid="uid://dpeiq2hfamtmi" path="res://interact.tscn" id="3_u7ejn"]
+[ext_resource type="PackedScene" uid="uid://cnlhp7i3r0ql" path="res://dragable.tscn" id="4_vd74m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o13tb"]
 size = Vector2(59, 16)
@@ -17,7 +19,7 @@ position = Vector2(-48, 56)
 [node name="World" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World"]
-polygon = PackedVector2Array(3, -219, 4, 293, 67, 339, 135, 263, 195, 377, 252, 320, 326, 371, 356, 246, 413, 251, 442, 377, 488, 354, 568, 331, 613, 391, 689, 398, 771, 404, 841, 326, 933, 386, 1042, 286, 1117, 331, 1174, 403, 1332, 406, 1348, -124, 1411, -124, 1422, 756, -150, 743, -95, -206)
+polygon = PackedVector2Array(3, -219, 1416, -158, 1335, -80, 6, -99, 4, 293, 67, 339, 135, 263, 195, 377, 252, 320, 326, 371, 356, 246, 413, 251, 442, 377, 488, 354, 568, 331, 613, 391, 689, 398, 771, 404, 841, 326, 933, 386, 1042, 286, 1117, 331, 1174, 403, 1332, 406, 1348, -124, 1411, -124, 1422, 756, -150, 743, -95, -206)
 
 [node name="Polygon2D" type="Polygon2D" parent="World/CollisionPolygon2D"]
 
@@ -32,3 +34,9 @@ shape = SubResource("RectangleShape2D_o13tb")
 position = Vector2(-0.250003, -4.76837e-07)
 scale = Vector2(59.5, 16)
 texture = SubResource("PlaceholderTexture2D_j68mf")
+
+[node name="Interact" parent="." instance=ExtResource("3_u7ejn")]
+position = Vector2(690, 344)
+
+[node name="Dragable" parent="." instance=ExtResource("4_vd74m")]
+position = Vector2(326, 191)
