@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cg16cyrvj10v5"]
+[gd_scene load_steps=9 format=3 uid="uid://cg16cyrvj10v5"]
 
 [ext_resource type="Script" path="res://plt_world_1.gd" id="1_ts242"]
 [ext_resource type="PackedScene" uid="uid://clmxolsg87707" path="res://plt_player.tscn" id="2_1bdqt"]
+[ext_resource type="PackedScene" uid="uid://c2pyvhpaxw3mw" path="res://plt_enemy.tscn" id="3_8udxf"]
 [ext_resource type="PackedScene" uid="uid://dovj072muk1g2" path="res://better_interact.tscn" id="4_q8ae6"]
 [ext_resource type="PackedScene" uid="uid://cnlhp7i3r0ql" path="res://dragable.tscn" id="4_vd74m"]
 
@@ -9,6 +10,9 @@
 size = Vector2(59, 16)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_j68mf"]
+
+[sub_resource type="Theme" id="Theme_b4fk0"]
+default_font_size = 25
 
 [node name="plt_world 1" type="Node2D"]
 script = ExtResource("1_ts242")
@@ -19,9 +23,44 @@ position = Vector2(-48, 56)
 [node name="World" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World"]
-polygon = PackedVector2Array(3, -219, 1416, -158, 1335, -80, 6, -99, 4, 293, 67, 339, 112, 232, 185, 221, 237, 256, 174, 353, 229, 412, 346, 350, 294, 262, 395, 215, 478, 256, 383, 353, 488, 354, 539, 232, 585, 215, 618, 350, 688, 341, 761, 341, 760, 243, 816, 204, 903, 217, 949, 314, 933, 386, 1042, 286, 1033, 212, 1138, 161, 1216, 200, 1268, 251, 1224, 328, 1170, 330, 1173.55, 533.58, -95, 519, -103, 739, -10, 739, 14, 603, 70, 648, 43, 720, 216.747, 721.685, 201, 587, 308, 603, 324, 693, 468, 656, 342.392, 722.904, 529, 757, 759, 595, 807, 637, 818, 779, 882, 723, 871, 677, 946, 611, 1042, 661, 972.455, 729.016, 1177, 731, 1349, 733, 1348, -124, 1411, -124, 1422, 756, 1434, 942, -149, 891, -150, 743, -95, -206)
+position = Vector2(-7, 20)
+scale = Vector2(1.00319, 1.05135)
+polygon = PackedVector2Array(3, -219, 6, -99, 4, 293, 67, 339, 112, 232, 185, 221, 237, 256, 174, 353, 230, 372, 346, 350, 294, 262, 395, 215, 478, 256, 383, 353, 488, 354, 539, 232, 585, 215, 616.033, 284.396, 650, 304, 684, 313, 688, 341, 761, 341, 784, 280, 731, 298, 725, 260, 760, 243, 816, 204, 903, 217, 954, 275, 949, 314, 1042, 286, 1033, 212, 1138, 161, 1216, 200, 1268, 251, 1224, 328, 1170, 330, 1173.55, 533.58, -95, 519, -103, 739, -10, 739, 14, 603, 70, 610, 106, 630, 70, 648, 62, 707, 216.747, 721.685, 201, 587, 308, 603, 332, 625, 412, 573, 464, 614, 450, 655, 491, 683, 448, 737, 529, 757, 378.792, 1979.36, 678.834, 1974.6, 713, 768, 619, 642, 662, 596, 759, 595, 807, 637, 819.386, 737.148, 882, 723, 871, 677, 946, 611, 1042, 661, 972.455, 729.016, 1177, 731, 1349, 733, 1379.6, -195.939, -680.828, -214.962, -1.99364, -296.761, 1379.6, -320.54, 2307.63, -155.99, 2307.63, 1958.43, 2000.61, 2190.51, -1446.38, 2296.09, -1573.98, -203.547)
 
 [node name="Polygon2D" type="Polygon2D" parent="World/CollisionPolygon2D"]
+
+[node name="plt_enemy" parent="World" instance=ExtResource("3_8udxf")]
+position = Vector2(590, 1963)
+
+[node name="plt_enemy2" parent="World" instance=ExtResource("3_8udxf")]
+position = Vector2(669, 1981)
+
+[node name="plt_enemy3" parent="World" instance=ExtResource("3_8udxf")]
+position = Vector2(408, 1903)
+
+[node name="plt_enemy4" parent="World" instance=ExtResource("3_8udxf")]
+position = Vector2(526, 1977)
+
+[node name="plt_enemy5" parent="World" instance=ExtResource("3_8udxf")]
+position = Vector2(508, 1952)
+
+[node name="plt_enemy6" parent="World" instance=ExtResource("3_8udxf")]
+position = Vector2(453, 1943)
+
+[node name="plt_enemy7" parent="World" instance=ExtResource("3_8udxf")]
+position = Vector2(424, 2038)
+
+[node name="plt_enemy8" parent="World" instance=ExtResource("3_8udxf")]
+position = Vector2(556, 2038)
+
+[node name="plt_enemy9" parent="World" instance=ExtResource("3_8udxf")]
+position = Vector2(513, 2052)
+
+[node name="plt_enemy10" parent="World" instance=ExtResource("3_8udxf")]
+position = Vector2(631, 2045)
+
+[node name="plt_enemy11" parent="World" instance=ExtResource("3_8udxf")]
+position = Vector2(470, 1999)
 
 [node name="StartPlat" type="StaticBody2D" parent="."]
 position = Vector2(3, 139)
@@ -35,8 +74,26 @@ position = Vector2(-0.250003, -4.76837e-07)
 scale = Vector2(59.5, 16)
 texture = SubResource("PlaceholderTexture2D_j68mf")
 
-[node name="Dragable" parent="." instance=ExtResource("4_vd74m")]
-position = Vector2(326, 191)
+[node name="plt_enemy6" parent="." instance=ExtResource("3_8udxf")]
+position = Vector2(161, 699)
+
+[node name="plt_enemy4" parent="." instance=ExtResource("3_8udxf")]
+position = Vector2(1099, 721)
+
+[node name="plt_enemy3" parent="." instance=ExtResource("3_8udxf")]
+position = Vector2(988, 308)
+
+[node name="plt_enemy" parent="." instance=ExtResource("3_8udxf")]
+position = Vector2(255, 335)
+
+[node name="plt_enemy2" parent="." instance=ExtResource("3_8udxf")]
+position = Vector2(452, 324)
+
+[node name="plt_enemy5" parent="." instance=ExtResource("3_8udxf")]
+position = Vector2(76, 691)
+
+[node name="DebugBlock" parent="." instance=ExtResource("4_vd74m")]
+position = Vector2(22, 79)
 
 [node name="BetterInteract" parent="." instance=ExtResource("4_q8ae6")]
 position = Vector2(655, 165)
@@ -44,5 +101,12 @@ position = Vector2(655, 165)
 [node name="BetterInteract2" parent="." instance=ExtResource("4_q8ae6")]
 position = Vector2(655, 84)
 
-[node name="Dragable2" parent="." instance=ExtResource("4_vd74m")]
-position = Vector2(683, 439)
+[node name="plt_enemy7" parent="." instance=ExtResource("3_8udxf")]
+position = Vector2(1168, 736)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -106.0
+offset_top = 663.0
+offset_bottom = 707.0
+theme = SubResource("Theme_b4fk0")
+text = "You Win!"
