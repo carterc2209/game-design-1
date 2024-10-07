@@ -90,7 +90,7 @@ position = Vector2(255, 335)
 position = Vector2(452, 324)
 
 [node name="plt_enemy5" parent="." instance=ExtResource("3_8udxf")]
-position = Vector2(76, 691)
+position = Vector2(88, 706)
 
 [node name="DebugBlock" parent="." instance=ExtResource("4_vd74m")]
 position = Vector2(22, 79)

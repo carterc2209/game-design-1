@@ -1,10 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2pyvhpaxw3mw"]
+[gd_scene load_steps=10 format=3 uid="uid://c2pyvhpaxw3mw"]
 
 [ext_resource type="Script" path="res://plt_enemy.gd" id="1_2iahj"]
 [ext_resource type="Texture2D" uid="uid://cphqsktsjq0od" path="res://icon.svg" id="2_cmtd1"]
+[ext_resource type="Texture2D" uid="uid://tel31cfrd3v7" path="res://Assets/Sprites/characters.png" id="3_xj2ba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yquxf"]
-size = Vector2(24, 22)
+size = Vector2(18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haxuo"]
+atlas = ExtResource("3_xj2ba")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kou6n"]
+atlas = ExtResource("3_xj2ba")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c00w"]
+atlas = ExtResource("3_xj2ba")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrn1t"]
+atlas = ExtResource("3_xj2ba")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l4hdl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_haxuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kou6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8c00w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrn1t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="plt_enemy" type="RigidBody2D"]
 contact_monitor = true
@@ -12,6 +49,7 @@ max_contacts_reported = 3
 script = ExtResource("1_2iahj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.466667, 0.113725, 0.0823529, 1)
 position = Vector2(2.98023e-08, -2.68221e-07)
 scale = Vector2(0.125, 0.125)
@@ -19,10 +57,15 @@ texture = ExtResource("2_cmtd1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color(1, 0.947452, 0.93841, 1)
+position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_yquxf")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l4hdl")
+frame_progress = 0.405365
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
