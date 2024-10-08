@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://plt_world_1.gd" id="1_ts242"]
 [ext_resource type="PackedScene" uid="uid://clmxolsg87707" path="res://plt_player.tscn" id="2_1bdqt"]
 [ext_resource type="PackedScene" uid="uid://c2pyvhpaxw3mw" path="res://plt_enemy.tscn" id="3_8udxf"]
-[ext_resource type="PackedScene" uid="uid://dovj072muk1g2" path="res://better_interact.tscn" id="4_q8ae6"]
 [ext_resource type="PackedScene" uid="uid://cnlhp7i3r0ql" path="res://dragable.tscn" id="4_vd74m"]
+[ext_resource type="PackedScene" uid="uid://dpeiq2hfamtmi" path="res://interact.tscn" id="5_ld7t6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o13tb"]
 size = Vector2(59, 16)
@@ -25,7 +25,7 @@ position = Vector2(-48, 56)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World"]
 position = Vector2(-7, 20)
 scale = Vector2(1.00319, 1.05135)
-polygon = PackedVector2Array(3, -219, 6, -99, 4, 293, 67, 339, 112, 232, 185, 221, 237, 256, 174, 353, 230, 372, 346, 350, 292.068, 273.934, 364.836, 232.083, 445.579, 251.106, 433.617, 334.808, 480.467, 338.612, 498.41, 290.103, 539, 232, 585, 215, 594.105, 254.91, 616.033, 284.396, 650, 304, 684, 313, 688, 341, 761, 341, 784, 280, 731, 298, 725, 260, 760, 243, 816, 204, 903, 217, 935.017, 247.301, 964.922, 267.275, 949, 314, 1042, 286, 1033, 212, 1071.58, 177.867, 1138, 161, 1216, 200, 1268, 251, 1268.95, 535.502, -95, 519, -103, 739, -10, 739, 14, 603, 70, 610, 106, 630, 70, 648, 62, 707, 216.747, 721.685, 201, 587, 308, 603, 332, 625, 412, 573, 464, 614, 450, 655, 491, 683, 448, 737, 529, 757, 378.792, 1979.36, 678.834, 1974.6, 713, 768, 619, 642, 662, 596, 759, 595, 807, 637, 819.386, 737.148, 882, 723, 871, 677, 946, 611, 1042, 661, 972.455, 729.016, 1177, 731, 1349, 733, 1379.6, -195.939, -680.828, -214.962, -1.99364, -296.761, 1379.6, -320.54, 2307.63, -155.99, 2307.63, 1958.43, 2000.61, 2190.51, -1446.38, 2296.09, -1573.98, -203.547)
+polygon = PackedVector2Array(3, -219, 6, -99, 4, 293, 67, 339, 112, 232, 185, 221, 237, 256, 174, 353, 230, 372, 346, 350, 292.068, 273.934, 364.836, 232.083, 445.579, 251.106, 433.617, 334.808, 480.467, 338.612, 498.41, 290.103, 539, 232, 585, 215, 594.105, 254.91, 616.033, 284.396, 650, 304, 684, 313, 688, 341, 761, 341, 784, 280, 731, 298, 725, 260, 760, 243, 816, 204, 903, 217, 935.017, 247.301, 964.922, 267.275, 949, 314, 1042, 286, 1033, 212, 1071.58, 177.867, 1138, 161, 1216, 200, 1268, 251, 1268.95, 535.502, -95, 519, -103, 739, -10, 739, 14, 603, 70, 610, 106, 630, 70, 648, 62, 707, 216.747, 721.685, 201, 587, 308, 603, 332, 625, 412, 573, 464, 614, 450, 655, 491, 683, 448, 737, 529, 757, 378.792, 1979.36, 678.834, 1974.6, 713, 768, 619, 642, 662, 596, 759, 595, 807, 637, 819.386, 737.148, 882, 723, 871, 677, 946, 611, 1042, 661, 972.455, 729.016, 1177, 731, 1477.29, 731.441, 1471.43, 185.376, 1386.58, 150.283, 1614.85, 154.088, 1623.82, 559.281, 2263.78, 566.89, 2263.78, -116.041, 1804.24, -112.237, 1621.83, 63.7276, 1467.32, 53.2648, 1379.6, 56.1183, 1466.32, -7.60926, 1467.32, -197.841, -680.828, -214.962, -1.99364, -296.761, 1379.6, -320.54, 3600.51, -306.273, 3640.39, 2263.76, -1446.38, 2296.09, -1573.98, -203.547)
 
 [node name="Polygon2D" type="Polygon2D" parent="World/CollisionPolygon2D"]
 
@@ -70,46 +70,33 @@ position = Vector2(31.5, 7)
 shape = SubResource("RectangleShape2D_o13tb")
 
 [node name="Sprite2D" type="Sprite2D" parent="StartPlat/CollisionShape2D"]
-position = Vector2(-0.250003, -4.76837e-07)
+position = Vector2(-6.5, -4.76837e-07)
 scale = Vector2(59.5, 16)
 texture = SubResource("PlaceholderTexture2D_j68mf")
 
 [node name="plt_enemy6" parent="." instance=ExtResource("3_8udxf")]
 position = Vector2(161, 699)
-lock_rotation = false
 
 [node name="plt_enemy4" parent="." instance=ExtResource("3_8udxf")]
 position = Vector2(1099, 721)
-lock_rotation = false
 
 [node name="plt_enemy3" parent="." instance=ExtResource("3_8udxf")]
 position = Vector2(988, 308)
-lock_rotation = false
 
 [node name="plt_enemy" parent="." instance=ExtResource("3_8udxf")]
 position = Vector2(255, 335)
-lock_rotation = false
 
 [node name="plt_enemy2" parent="." instance=ExtResource("3_8udxf")]
 position = Vector2(452, 324)
-lock_rotation = false
 
 [node name="plt_enemy5" parent="." instance=ExtResource("3_8udxf")]
 position = Vector2(88, 706)
-lock_rotation = false
 
 [node name="DebugBlock" parent="." instance=ExtResource("4_vd74m")]
 position = Vector2(22, 79)
 
-[node name="BetterInteract" parent="." instance=ExtResource("4_q8ae6")]
-position = Vector2(655, 165)
-
-[node name="BetterInteract2" parent="." instance=ExtResource("4_q8ae6")]
-position = Vector2(655, 84)
-
 [node name="plt_enemy7" parent="." instance=ExtResource("3_8udxf")]
 position = Vector2(1249, 739)
-lock_rotation = false
 
 [node name="Label" type="Label" parent="."]
 offset_left = -106.0
@@ -117,3 +104,6 @@ offset_top = 663.0
 offset_bottom = 707.0
 theme = SubResource("Theme_b4fk0")
 text = "You Win!"
+
+[node name="Interact" parent="." instance=ExtResource("5_ld7t6")]
+position = Vector2(652, 184)
