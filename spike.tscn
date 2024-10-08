@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://byqhrwjrejwfu"]
+
+[ext_resource type="Script" path="res://rigid_body_2d.gd" id="1_lki3b"]
+
+[node name="Spike" type="RigidBody2D"]
+script = ExtResource("1_lki3b")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(11, 12, 16, -2, 21, 12)
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cg16cyrvj10v5"]
+[gd_scene load_steps=10 format=3 uid="uid://cg16cyrvj10v5"]
 
 [ext_resource type="Script" path="res://plt_world_1.gd" id="1_ts242"]
 [ext_resource type="PackedScene" uid="uid://clmxolsg87707" path="res://plt_player.tscn" id="2_1bdqt"]
 [ext_resource type="PackedScene" uid="uid://c2pyvhpaxw3mw" path="res://plt_enemy.tscn" id="3_8udxf"]
 [ext_resource type="PackedScene" uid="uid://cnlhp7i3r0ql" path="res://dragable.tscn" id="4_vd74m"]
 [ext_resource type="PackedScene" uid="uid://dpeiq2hfamtmi" path="res://interact.tscn" id="5_ld7t6"]
+[ext_resource type="PackedScene" uid="uid://byqhrwjrejwfu" path="res://spike.tscn" id="6_1c7gg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o13tb"]
 size = Vector2(59, 16)
@@ -107,3 +108,6 @@ text = "You Win!"
 
 [node name="Interact" parent="." instance=ExtResource("5_ld7t6")]
 position = Vector2(652, 184)
+
+[node name="Spike" parent="." instance=ExtResource("6_1c7gg")]
+position = Vector2(137, 243)
