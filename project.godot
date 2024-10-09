@@ -15,6 +15,10 @@ run/main_scene="res://plt_world_1.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 ui_left={
