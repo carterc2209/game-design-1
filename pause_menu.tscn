@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://r7eks1gbt7p8"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_mowk4"]
+[ext_resource type="Theme" uid="uid://os4yjvatm7cf" path="res://Button.tres" id="2_ronti"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mowk4")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -365.0
+offset_top = -68.0
+offset_right = 341.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ronti")
+text = "Resume"
+
+[node name="Quit" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ronti")
+text = "Quit"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

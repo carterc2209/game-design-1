@@ -113,7 +113,3 @@ position = Vector2(652, 184)
 position = Vector2(-112, 799)
 scale = Vector2(3.8, 0.589732)
 nextLvl = "plt_world_2"
-
-[node name="Change_lvl2" parent="." instance=ExtResource("7_oa5hc")]
-position = Vector2(145, 216)
-nextLvl = "plt_world_2"

@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://clmxolsg87707"]
+[gd_scene load_steps=15 format=3 uid="uid://clmxolsg87707"]
 
 [ext_resource type="Script" path="res://plt_player.gd" id="1_f5uwj"]
 [ext_resource type="Texture2D" uid="uid://cphqsktsjq0od" path="res://icon.svg" id="2_cbuwy"]
 [ext_resource type="Texture2D" uid="uid://tel31cfrd3v7" path="res://Assets/Sprites/characters.png" id="3_omo6b"]
+[ext_resource type="PackedScene" uid="uid://r7eks1gbt7p8" path="res://pause_menu.tscn" id="4_ttt7c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s0785"]
 height = 26.0
@@ -94,12 +95,16 @@ texture = ExtResource("2_cbuwy")
 position = Vector2(64, 64)
 shape = SubResource("CapsuleShape2D_s0785")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(64, 64)
-zoom = Vector2(3, 3)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(64, 59)
 sprite_frames = SubResource("SpriteFrames_be54u")
 animation = &"Jump"
 frame_progress = 0.902411
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(64, 64)
+zoom = Vector2(3, 3)
+
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("4_ttt7c")]
+visible = false
+z_index = 4096
