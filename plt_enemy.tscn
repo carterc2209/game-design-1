@@ -65,7 +65,7 @@ debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l4hdl")
-frame_progress = 0.613181
+frame_progress = 0.484949
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

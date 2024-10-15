@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b3yxkaaljnntx" path="res://change_lvl.tscn" id="7_oa5hc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o13tb"]
-size = Vector2(59, 16)
+size = Vector2(74, 16)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_j68mf"]
 
@@ -67,12 +67,12 @@ position = Vector2(470, 1999)
 position = Vector2(3, 139)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartPlat"]
-position = Vector2(31.5, 7)
+position = Vector2(33, 2)
 shape = SubResource("RectangleShape2D_o13tb")
 
 [node name="Sprite2D" type="Sprite2D" parent="StartPlat/CollisionShape2D"]
-position = Vector2(-6.5, -4.76837e-07)
-scale = Vector2(59.5, 16)
+position = Vector2(4.76837e-07, -4.76837e-07)
+scale = Vector2(74.25, 16)
 texture = SubResource("PlaceholderTexture2D_j68mf")
 
 [node name="plt_enemy6" parent="." instance=ExtResource("3_8udxf")]
