@@ -45,7 +45,7 @@ animations = [{
 
 [node name="plt_enemy" type="RigidBody2D"]
 contact_monitor = true
-max_contacts_reported = 3
+max_contacts_reported = 1
 script = ExtResource("1_2iahj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
