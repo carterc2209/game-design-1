@@ -3,7 +3,6 @@ extends Control
 
 
 func _on_calc_pressed() -> void:
-	$ItemList.add_item("")
 	for num in range(2, 11 + 1, 2):
 		var squared = num**2
 		var one = num + 1
