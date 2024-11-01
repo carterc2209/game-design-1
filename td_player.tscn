@@ -1,8 +1,9 @@
-[gd_scene load_steps=46 format=3 uid="uid://crqbgybucx55j"]
+[gd_scene load_steps=47 format=3 uid="uid://crqbgybucx55j"]
 
 [ext_resource type="Texture2D" uid="uid://bpptlsllcdx05" path="res://Assets/Sprites/gfx/gfx/character.png" id="1_6fxit"]
 [ext_resource type="Script" path="res://td_player.gd" id="1_ad7s7"]
 [ext_resource type="PackedScene" uid="uid://r7eks1gbt7p8" path="res://pause_menu.tscn" id="3_uba3d"]
+[ext_resource type="PackedScene" uid="uid://bogado3kqsm0u" path="res://player_hud.tscn" id="4_6krvk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_odcnc"]
 atlas = ExtResource("1_6fxit")
@@ -351,10 +352,8 @@ script = ExtResource("1_ad7s7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x3kw4")
-animation = &"Swipe_Charge"
+animation = &"Idle_Down"
 autoplay = "Idle_Down"
-frame = 11
-frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
@@ -364,3 +363,6 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_gdhc5")
+
+[node name="PlayerHUD" parent="." instance=ExtResource("4_6krvk")]
+visible = false

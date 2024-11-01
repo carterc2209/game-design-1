@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://bogado3kqsm0u"]
+
+[ext_resource type="Script" path="res://player_hud.gd" id="1_1q8i5"]
+[ext_resource type="Texture2D" uid="uid://dgynqls4g8dt" path="res://Assets/Sprites/gfx/gfx/objects.png" id="1_nc8d8"]
+
+[sub_resource type="Theme" id="Theme_1ffr4"]
+default_font_size = 50
+
+[node name="PlayerHUD" type="CanvasLayer" groups=["HUD"]]
+script = ExtResource("1_1q8i5")
+
+[node name="PlayerHealth" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 529.0
+offset_bottom = 300.0
+
+[node name="Hearts" type="Sprite2D" parent="PlayerHealth"]
+position = Vector2(40, 40)
+scale = Vector2(5, 5)
+texture = ExtResource("1_nc8d8")
+hframes = 33
+vframes = 20
+frame = 8
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(41, 608)
+scale = Vector2(5, 5)
+texture = ExtResource("1_nc8d8")
+hframes = 33
+vframes = 20
+frame = 132
+
+[node name="Lbl_Money" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 577.0
+offset_right = 161.0
+offset_bottom = 640.0
+theme = SubResource("Theme_1ffr4")
+text = "000"
