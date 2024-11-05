@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://b6x887d2tmhrl"]
+[gd_scene load_steps=5 format=4 uid="uid://b6x887d2tmhrl"]
 
 [ext_resource type="TileSet" uid="uid://bv5kko5fciq8d" path="res://Assets/TileSets/td_world_1.tres" id="1_k4mwf"]
 [ext_resource type="PackedScene" uid="uid://crqbgybucx55j" path="res://td_player.tscn" id="2_5isbv"]
+[ext_resource type="PackedScene" uid="uid://biey7ucgvkyae" path="res://Entities/mini_heart.tscn" id="3_pe30y"]
+[ext_resource type="PackedScene" uid="uid://c3sqa4gnbk5t8" path="res://Entities/coin.tscn" id="4_71g7o"]
 
 [node name="td_world1" type="Node2D"]
 
@@ -16,3 +18,9 @@ tile_set = ExtResource("1_k4mwf")
 [node name="td_player" parent="." instance=ExtResource("2_5isbv")]
 z_index = 100
 position = Vector2(-108, 176)
+
+[node name="mini_heart" parent="." instance=ExtResource("3_pe30y")]
+position = Vector2(-203, 172)
+
+[node name="coin" parent="." instance=ExtResource("4_71g7o")]
+position = Vector2(-77, 182)
