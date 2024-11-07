@@ -9,9 +9,9 @@
 atlas = ExtResource("1_6fxit")
 region = Rect2(0, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_arrm2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_37aov"]
 atlas = ExtResource("1_6fxit")
-region = Rect2(0, 96, 16, 32)
+region = Rect2(0, 34, 18, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8cv2"]
 atlas = ExtResource("1_6fxit")
@@ -177,7 +177,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_arrm2")
+"texture": SubResource("AtlasTexture_37aov")
 }],
 "loop": true,
 "name": &"Idle_Side",
@@ -352,7 +352,7 @@ script = ExtResource("1_ad7s7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x3kw4")
-animation = &"Idle_Down"
+animation = &"Swipe_Down"
 autoplay = "Idle_Down"
 
 [node name="Camera2D" type="Camera2D" parent="."]
