@@ -28,11 +28,13 @@ func draw_hearts():
 		create_heart() # 1 heart per 20 hp
 
 func add_money():
+	#$Control/Lbl_Money.text = data.money
 	pass
 
 
 
 func _process(delta: float) -> void:
+	$Control/Lbl_Money.text = "%03d" % player.data.money
 	var p_health = player.data.health
 	var full_hearts = floor(p_health / 20)
 	var remainder = int(p_health) % 20
