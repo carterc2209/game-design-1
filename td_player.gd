@@ -17,7 +17,7 @@ var look_direction = Vector2.DOWN  # Vector2(0,1)
 var attack_direction = look_direction
 var animation_lock = 0.0  # Lock player while playing attack animation
 var damage_lock = 0.0
-var charge_time = 2.5
+var charge_time = 1.5
 var charge_start_time = 0.0
 
 var slash_scene = preload("res://entities/attacks/slash.tscn")
@@ -44,7 +44,7 @@ func attack():
 
 func charged_attack():
 	data.state = STATES.ATTACKING
-	$AnimatedSprite2D.play("swipe_charge")
+	$AnimatedSprite2D.play("Swipe_Charge")
 	attack_direction = -look_direction
 	damage_lock = 0.3
 	for i in range(9):
