@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 49.5
+const SPEED = 60.0
 var MAX_HEALTH = 30.0
 var HEALTH = MAX_HEALTH
 var DAMAGE = 10.0
@@ -40,7 +40,7 @@ var ai_timer_max = 0.5
 var ai_timer = ai_timer_max - randi() % 5
 var damage_lock = 0.0
 var animation_lock = 0.0
-var knockback = 128.0
+var knockback = 128.0 * 1.25
 var vision_distance = 50.0
 var money_value = 5.0
 
@@ -51,11 +51,37 @@ signal recovered
 @onready var rcL = $RayCast2DL
 @onready var anim_player = $AnimatedSprite2D
 
+var drops = ["drop_coin", "drop_heart"]
+var coin_scene = preload("res://Entities/coin.tscn")
+var heart_scene = preload("res://Entities/mini_heart.tscn")
+var damage_shader = preload("res://Assets/Shaders/take_damage.tres")
+
+func vec2_offset():
+	return Vector2(randf_range(-10.0, 10.0), randf_range(-10.0, 10.0))
+
+func drop_scene(item_scene):
+	item_scene.global_position = self.global_position + vec2_offset()
+	get_tree().current_scene.add_child(item_scene)
+
+func drop_heart():
+	drop_scene(heart_scene.instantiate())
+
+func drop_coin():
+	var coin = coin_scene.instantiate()
+	coin.value = self.money_value
+	drop_scene(coin)
+
+func drop_items():
+	var num_drops = randi() % 3 + 1
+	for i in range(num_drops):
+		var rnd_drop = drops[randi() % drops.size()]
+		call_deferred(rnd_drop)
+
 func turn_toward_player_location(location: Vector2):
-	# set the state to move toward the player
+	# Set the state to move toward the player
 	var dir_to_player = (location - self.global_position).normalized()
 	velocity = dir_to_player * (SPEED * 2)
-	# determine the closest cardinal direction for animation
+	# Determine the closest cardinal direction for animation
 	var closest_angle = INF
 	var closest_state = STATES.IDLE
 	for i in range(1, 5):
@@ -67,15 +93,16 @@ func turn_toward_player_location(location: Vector2):
 	AI_STATE = closest_state
 
 func take_damage(dmg, attacker=null):
-	# TODO
 	if damage_lock == 0.0:
 		AI_STATE = STATES.DAMAGED
 		HEALTH -= dmg
-		damage_lock = 100.2
+		damage_lock = 0.2
 		animation_lock = 0.2
-		# TODO: damage shader
+		var dmg_intensity = clamp(1.0-((HEALTH+0.01)/MAX_HEALTH), 0.1, 0.8)
+		$AnimatedSprite2D.material = damage_shader.duplicate()
+		$AnimatedSprite2D.material.set_shader_parameter("intensity", dmg_intensity)
 		if HEALTH <= 0:
-			# TODO: drop item
+			drop_items()
 			# TODO: play death sound
 			queue_free()
 		else:
@@ -97,23 +124,22 @@ func _physics_process(delta: float) -> void:
 			raydir.rotated(deg_to_rad(+45)).normalized() * vision_distance
 	if animation_lock == 0.0:
 		if AI_STATE == STATES.DAMAGED:
-			# TODO: reset shader
+			$AnimatedSprite2D.material = null
 			AI_STATE = STATES.IDLE
 			recovered.emit()
 		for player in get_tree().get_nodes_in_group("Player"):
 			if $AttackBox.overlaps_body(player):
 				if player.damage_lock == 0.0:
-					var inertia = (player.global_position - self.global_position)
-					player.inertia = (inertia.normalized() * Vector2(1,1)) * knockback
+					var inert = (player.global_position-self.global_position)
+					player.inertia = inert.normalized() * knockback
 					player.take_damage(DAMAGE)
 				else:
 					continue
 			if player.data.state != player.STATES.DEAD:
 				if (rcM.is_colliding() and rcM.get_collider() == player) or \
-				   (rcR.is_colliding() and rcR.get_collider() == player) or \
-				   (rcL.is_colliding() and rcL.get_collider() == player):
+				   (rcL.is_colliding() and rcL.get_collider() == player) or \
+				   (rcR.is_colliding() and rcR.get_collider() == player):
 					turn_toward_player_location(player.global_position)
-					
 			pass
 		
 		ai_timer = clamp(ai_timer-delta, 0.0, ai_timer_max)

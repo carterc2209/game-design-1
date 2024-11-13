@@ -1,19 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://bogado3kqsm0u"]
 
-[ext_resource type="Script" path="res://player_hud.gd" id="1_1q8i5"]
 [ext_resource type="Texture2D" uid="uid://dgynqls4g8dt" path="res://Assets/Sprites/gfx/gfx/objects.png" id="1_nc8d8"]
-
-[sub_resource type="Theme" id="Theme_1ffr4"]
-default_font_size = 50
+[ext_resource type="Script" path="res://player_hud.gd" id="1_tl0v7"]
+[ext_resource type="Theme" uid="uid://os4yjvatm7cf" path="res://Button.tres" id="3_hejnk"]
 
 [node name="PlayerHUD" type="CanvasLayer" groups=["HUD"]]
-script = ExtResource("1_1q8i5")
+script = ExtResource("1_tl0v7")
 
 [node name="PlayerHealth" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 529.0
-offset_bottom = 300.0
+offset_right = 569.0
+offset_bottom = 217.0
 
 [node name="Hearts" type="Sprite2D" parent="PlayerHealth"]
 position = Vector2(40, 40)
@@ -23,25 +21,28 @@ hframes = 33
 vframes = 20
 frame = 8
 
-[node name="Control" type="Control" parent="."]
+[node name="Money" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -110.0
+offset_right = 413.0
+grow_vertical = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="Control"]
-position = Vector2(41, 608)
+[node name="Icon" type="Sprite2D" parent="Money"]
+position = Vector2(49, 66)
 scale = Vector2(5, 5)
 texture = ExtResource("1_nc8d8")
 hframes = 33
 vframes = 20
 frame = 132
 
-[node name="Lbl_Money" type="Label" parent="Control"]
+[node name="Coins" type="Label" parent="Money"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 577.0
-offset_right = 161.0
-offset_bottom = 640.0
-theme = SubResource("Theme_1ffr4")
+offset_left = 84.0
+offset_top = 38.0
+offset_right = 149.0
+offset_bottom = 91.0
+theme = ExtResource("3_hejnk")
 text = "000"
