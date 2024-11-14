@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://b6x887d2tmhrl"]
+[gd_scene load_steps=7 format=4 uid="uid://b6x887d2tmhrl"]
 
 [ext_resource type="TileSet" uid="uid://bv5kko5fciq8d" path="res://Assets/TileSets/td_world_1.tres" id="1_k4mwf"]
 [ext_resource type="PackedScene" uid="uid://crqbgybucx55j" path="res://td_player.tscn" id="2_5isbv"]
 [ext_resource type="PackedScene" uid="uid://biey7ucgvkyae" path="res://Entities/mini_heart.tscn" id="3_pe30y"]
 [ext_resource type="PackedScene" uid="uid://c3sqa4gnbk5t8" path="res://Entities/coin.tscn" id="4_71g7o"]
 [ext_resource type="PackedScene" uid="uid://brapjvfam3khg" path="res://td_enemy.tscn" id="5_qaidn"]
+[ext_resource type="AudioStream" uid="uid://b1xjrm3ja1x8d" path="res://Assets/Sounds/overworld.mp3" id="6_dh27v"]
 
 [node name="td_world1" type="Node2D"]
 
@@ -26,5 +27,18 @@ position = Vector2(-203, 172)
 [node name="coin" parent="." instance=ExtResource("4_71g7o")]
 position = Vector2(-77, 182)
 
-[node name="td_enemy" parent="." instance=ExtResource("5_qaidn")]
-position = Vector2(-70, 133)
+[node name="td_enemy18" parent="." instance=ExtResource("5_qaidn")]
+position = Vector2(-409, 45)
+
+[node name="td_enemy19" parent="." instance=ExtResource("5_qaidn")]
+position = Vector2(-432, 46)
+
+[node name="td_enemy20" parent="." instance=ExtResource("5_qaidn")]
+position = Vector2(-409, 75)
+
+[node name="td_enemy21" parent="." instance=ExtResource("5_qaidn")]
+position = Vector2(-432, 76)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dh27v")
+volume_db = -10.0

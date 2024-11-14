@@ -13,16 +13,23 @@ enum  STATES { IDLE=0, DEAD, DAMAGED, ATTACKING, CHARGING }
 }
 
 var inertia = Vector2()
-var look_direction = Vector2.DOWN  # Vector2(0,1)
-var attack_direction = look_direction
-var animation_lock = 0.0  # Lock player while playing attack animation
-var damage_lock = 0.0
-var charge_time = 1.5
+var look_direction    = Vector2.DOWN  # Vector2(0,1)
+var attack_direction  = look_direction
+var animation_lock    = 0.0  # Lock player while playing attack animation
+var damage_lock       = 0.0
+var charge_time       = 1.5
 var charge_start_time = 0.0
 
 var slash_scene = preload("res://entities/attacks/slash.tscn")
 
+var damage_shader = preload("res://Assets/Shaders/take_damage.tres")
+var attack_sound = preload("res://Assets/Sounds/slash.wav")
+var death_sound = preload("res://Assets/Sounds/playerdeath.wav")
+var hurt_sound = preload("res://Assets/Sounds/hitHurt.wav")
+
 @onready var p_HUD = get_tree().get_first_node_in_group("HUD")
+@onready var aud_player = $AudioStreamPlayer2D
+# hurt (downloaded), coin/heart(downloaded), charged (downloaded) attack sounds
 
 func get_direction_name():
 	return ["Right", "Down", "Left", "Up"][
@@ -40,6 +47,8 @@ func attack():
 	slash.position = attack_direction * 20.0
 	slash.rotation = Vector2().angle_to_point(-attack_direction)
 	add_child(slash)
+	aud_player.stream = attack_sound
+	aud_player.play()
 	animation_lock = 0.2
 
 func charged_attack():
@@ -79,13 +88,17 @@ func take_damage(dmg):
 		data.state = STATES.DAMAGED
 		damage_lock = 0.5
 		animation_lock = dmg * 0.005
-		# TODO: damage shader
+		$AnimatedSprite2D.material = damage_shader.duplicate()
+		$AnimatedSprite2D.material.set_shader_parameter("intensity", 0.5)
+		aud_player.stream = hurt_sound
+		aud_player.play
 		if data.health > 0:
-			#TODO: play damage sound
 			pass
 		else:
 			data.state = STATES.DEAD
-			# TODO: play death animation and sound
+			# TODO: play death animation
+			aud_player.stream = death_sound
+			aud_player.play()
 			await get_tree().create_timer(0.5).timeout
 			health_depleted.emit()
 	pass
@@ -95,6 +108,9 @@ func _physics_process(delta: float) -> void:
 	damage_lock = max(damage_lock-delta, 0.0)
 	
 	if animation_lock == 0.0 and data.state != STATES.DEAD:
+		if data.state == STATES.DAMAGED and max(damage_lock-delta, 0.0):
+			$AnimatedSprite2D.material = null;
+		
 		if data.state != STATES.CHARGING:
 			data.state = STATES.IDLE
 	
