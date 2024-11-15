@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://b6x887d2tmhrl"]
+[gd_scene load_steps=10 format=4 uid="uid://b6x887d2tmhrl"]
 
 [ext_resource type="TileSet" uid="uid://bv5kko5fciq8d" path="res://Assets/TileSets/td_world_1.tres" id="1_k4mwf"]
 [ext_resource type="PackedScene" uid="uid://crqbgybucx55j" path="res://td_player.tscn" id="2_5isbv"]
@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://c3sqa4gnbk5t8" path="res://Entities/coin.tscn" id="4_71g7o"]
 [ext_resource type="PackedScene" uid="uid://brapjvfam3khg" path="res://td_enemy.tscn" id="5_qaidn"]
 [ext_resource type="AudioStream" uid="uid://b1xjrm3ja1x8d" path="res://Assets/Sounds/overworld.mp3" id="6_dh27v"]
+[ext_resource type="Script" path="res://change_lvl.gd" id="7_sjghq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnudd"]
+size = Vector2(46.125, 26)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_42r60"]
 
 [node name="td_world1" type="Node2D"]
 
@@ -31,7 +37,8 @@ position = Vector2(-77, 182)
 position = Vector2(-409, 45)
 
 [node name="td_enemy19" parent="." instance=ExtResource("5_qaidn")]
-position = Vector2(-432, 46)
+position = Vector2(-108, 142)
+rotation = -3.14159
 
 [node name="td_enemy20" parent="." instance=ExtResource("5_qaidn")]
 position = Vector2(-409, 75)
@@ -42,3 +49,21 @@ position = Vector2(-432, 76)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_dh27v")
 volume_db = -10.0
+
+[node name="Change_lvl" type="Area2D" parent="."]
+position = Vector2(-344, 139)
+script = ExtResource("7_sjghq")
+nextLvl = "td_world_2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Change_lvl"]
+position = Vector2(200.938, -106)
+shape = SubResource("RectangleShape2D_nnudd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Change_lvl"]
+visible = false
+modulate = Color(0.643137, 0, 0, 1)
+position = Vector2(13, -24)
+scale = Vector2(26, 49)
+texture = SubResource("PlaceholderTexture2D_42r60")
+
+[connection signal="body_entered" from="Change_lvl" to="Change_lvl" method="_on_body_entered"]

@@ -26,10 +26,13 @@ var damage_shader = preload("res://Assets/Shaders/take_damage.tres")
 var attack_sound = preload("res://Assets/Sounds/slash.wav")
 var death_sound = preload("res://Assets/Sounds/playerdeath.wav")
 var hurt_sound = preload("res://Assets/Sounds/hitHurt.wav")
+var charged_sound = preload("res://Assets/Sounds/click.wav")
+var coin_sound = preload("res://Assets/Sounds/pickupCoin.wav")
+var heart_sound = preload("res://Assets/Sounds/powerUp.wav")
 
 @onready var p_HUD = get_tree().get_first_node_in_group("HUD")
 @onready var aud_player = $AudioStreamPlayer2D
-# hurt (downloaded), coin/heart(downloaded), charged (downloaded) attack sounds
+# coin/heart(downloaded) sounds
 
 func get_direction_name():
 	return ["Right", "Down", "Left", "Up"][
@@ -65,6 +68,8 @@ func charged_attack():
 		slash.rotation = Vector2().angle_to_point(-dir)
 		slash.damage  *= 1.5
 		add_child(slash)
+		aud_player.stream = attack_sound
+		aud_player.play()
 		await get_tree().create_timer(0.03).timeout
 	animation_lock = 0.2
 	await $AnimatedSprite2D.animation_finished
@@ -74,11 +79,15 @@ func _ready() -> void:
 	p_HUD.show()
 
 func pickup_health(value):
+	aud_player.stream = heart_sound
+	aud_player.play()
 	data.health += value
 	data.health = clamp(data.health, 0, data.max_health)
 
 func pickup_money(value):
 	data.money += value
+	aud_player.stream = coin_sound
+	aud_player.play()
 
 signal health_depleted
 

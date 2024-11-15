@@ -343,9 +343,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gdhc5"]
-radius = 9.0
-height = 22.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_583au"]
+size = Vector2(16, 12)
 
 [node name="td_player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_ad7s7")
@@ -362,7 +361,8 @@ zoom = Vector2(5, 5)
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_gdhc5")
+position = Vector2(-1, 4)
+shape = SubResource("RectangleShape2D_583au")
 
 [node name="PlayerHUD" parent="." instance=ExtResource("4_6krvk")]
 visible = false
