@@ -32,6 +32,8 @@ var heart_sound = preload("res://Assets/Sounds/powerUp.wav")
 
 @onready var p_HUD = get_tree().get_first_node_in_group("HUD")
 @onready var aud_player = $AudioStreamPlayer2D
+
+
 # coin/heart(downloaded) sounds
 
 func get_direction_name():
@@ -89,6 +91,12 @@ func pickup_money(value):
 	aud_player.stream = coin_sound
 	aud_player.play()
 
+func pickup_container(value):
+	data.max_health += value
+	data.health += value
+	data.health = clamp(data.health, 0, data.max_health)
+	p_HUD.draw_hearts()
+
 signal health_depleted
 
 func take_damage(dmg):
@@ -144,6 +152,13 @@ func _physics_process(delta: float) -> void:
 			attack()
 			charge_start_time = 0.0
 			data.state = STATES.CHARGING
+		
+		if Input.is_action_just_pressed("ui_select"): # Enter
+			for entity in get_tree().get_nodes_in_group("Interactable"):
+				if entity.in_range(self):
+					entity.interact(self)
+					data.state = STATES.IDLE
+					return
 		
 		charge_start_time += delta
 		if Input.is_action_just_released("ui_accept"):

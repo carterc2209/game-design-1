@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b6x887d2tmhrl"]
+[gd_scene load_steps=12 format=4 uid="uid://b6x887d2tmhrl"]
 
 [ext_resource type="TileSet" uid="uid://bv5kko5fciq8d" path="res://Assets/TileSets/td_world_1.tres" id="1_k4mwf"]
 [ext_resource type="PackedScene" uid="uid://crqbgybucx55j" path="res://td_player.tscn" id="2_5isbv"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://brapjvfam3khg" path="res://td_enemy.tscn" id="5_qaidn"]
 [ext_resource type="AudioStream" uid="uid://b1xjrm3ja1x8d" path="res://Assets/Sounds/overworld.mp3" id="6_dh27v"]
 [ext_resource type="Script" path="res://change_lvl.gd" id="7_sjghq"]
+[ext_resource type="PackedScene" uid="uid://b46ytw115t6eq" path="res://Entities/objects/smallchest.tscn" id="8_nkp0d"]
+[ext_resource type="PackedScene" uid="uid://busyarveahk00" path="res://Entities/heart_container.tscn" id="9_jb8nn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnudd"]
 size = Vector2(46.125, 26)
@@ -37,7 +39,7 @@ position = Vector2(-77, 182)
 position = Vector2(-409, 45)
 
 [node name="td_enemy19" parent="." instance=ExtResource("5_qaidn")]
-position = Vector2(-108, 142)
+position = Vector2(46, 162)
 rotation = -3.14159
 
 [node name="td_enemy20" parent="." instance=ExtResource("5_qaidn")]
@@ -65,5 +67,17 @@ modulate = Color(0.643137, 0, 0, 1)
 position = Vector2(13, -24)
 scale = Vector2(26, 49)
 texture = SubResource("PlaceholderTexture2D_42r60")
+
+[node name="smallchest" parent="." instance=ExtResource("8_nkp0d")]
+position = Vector2(-121, 239)
+
+[node name="smallchest2" parent="." instance=ExtResource("8_nkp0d")]
+position = Vector2(-126, 215)
+contents = {
+"coin": -9223372036854775808
+}
+
+[node name="heart_container" parent="." instance=ExtResource("9_jb8nn")]
+position = Vector2(-140, 69)
 
 [connection signal="body_entered" from="Change_lvl" to="Change_lvl" method="_on_body_entered"]

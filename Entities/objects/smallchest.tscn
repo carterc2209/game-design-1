@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b46ytw115t6eq"]
+
+[ext_resource type="Script" path="res://Entities/objects/smallchest.gd" id="1_oxd8i"]
+[ext_resource type="Texture2D" uid="uid://dgynqls4g8dt" path="res://Assets/Sprites/gfx/gfx/objects.png" id="1_vw56l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e5wov"]
+radius = 12.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37bxl"]
+size = Vector2(15, 15)
+
+[node name="smallchest" type="Node2D" groups=["Chest", "Interactable"]]
+script = ExtResource("1_oxd8i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vw56l")
+hframes = 35
+vframes = 20
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+shape = SubResource("CircleShape2D_e5wov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_37bxl")
+debug_color = Color(0.796214, 0.418442, 0.186999, 0.42)

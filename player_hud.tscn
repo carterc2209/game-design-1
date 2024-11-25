@@ -27,7 +27,7 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -110.0
-offset_right = 413.0
+offset_right = 1165.0
 grow_vertical = 0
 
 [node name="Icon" type="Sprite2D" parent="Money"]
