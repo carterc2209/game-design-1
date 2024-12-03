@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-const SPEED = 60.0
-var MAX_HEALTH = 10.0
+const SPEED = 30.0
+var MAX_HEALTH = 100.0
 var HEALTH = MAX_HEALTH
-var DAMAGE = 30.0
+var DAMAGE = 45.0
 var AI_STATE = STATES.IDLE
 
 enum STATES { IDLE=0, UP, DOWN, LEFT, RIGHT,
@@ -42,7 +42,7 @@ var damage_lock = 0.0
 var animation_lock = 0.0
 var knockback = 128.0 * 1.25
 var vision_distance = 50.0
-var money_value = 5.0
+var money_value = 500.0
 
 signal recovered
 
