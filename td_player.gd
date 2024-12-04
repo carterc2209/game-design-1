@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const SPEED = 110.0
 const MAXIMUM_OBTAINABLE_HEALTH = 400.0
 enum  STATES { IDLE=0, DEAD, DAMAGED, ATTACKING, CHARGING }
 
@@ -85,7 +85,7 @@ func area():
 		var angle = attack_direction.angle() + (i-4) * PI/4
 		var dir   = Vector2(cos(angle), sin(angle))
 		var slash = slash_scene.instantiate()
-		slash.damage *= 100
+		slash.damage *= 2
 		slash.position = dir * (10+i)
 		slash.rotation = Vector2().angle_to_point(-dir)
 		slash.damage *= 100
