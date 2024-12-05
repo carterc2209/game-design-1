@@ -80,15 +80,15 @@ func area():
 	$AnimatedSprite2D.play("Swipe_Charge")
 	attack_direction = -look_direction
 	damage_lock = 0.3
+	
 	for i in range(36):
 		# Offset by (i-4) * 45 degrees; [-4,4]
 		var angle = attack_direction.angle() + (i-4) * PI/4
 		var dir   = Vector2(cos(angle), sin(angle))
 		var slash = slash_scene.instantiate()
-		slash.damage *= 2
+		slash.damage *= pow(pow(2, i), 1/2)
 		slash.position = dir * (10+i)
 		slash.rotation = Vector2().angle_to_point(-dir)
-		slash.damage *= 100
 		self.add_child(slash)
 		#for l in range(10):
 			#slash.position = dir * (10+l)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://dldrubb5mcwji"]
+[gd_scene load_steps=11 format=4 uid="uid://dldrubb5mcwji"]
 
 [ext_resource type="Texture2D" uid="uid://dx2c5cjv1l5tr" path="res://Assets/Sprites/gfx/gfx/Overworld.png" id="1_nur44"]
 [ext_resource type="PackedScene" uid="uid://crqbgybucx55j" path="res://td_player.tscn" id="2_fajrp"]
 [ext_resource type="Script" path="res://change_lvl.gd" id="3_yvlcd"]
 [ext_resource type="PackedScene" uid="uid://brapjvfam3khg" path="res://td_enemy.tscn" id="4_47jxl"]
 [ext_resource type="PackedScene" uid="uid://ci8ytqa35xsue" path="res://td_boss.tscn" id="5_ago2f"]
+[ext_resource type="PackedScene" uid="uid://busyarveahk00" path="res://Entities/heart_container.tscn" id="6_1pcml"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v8e7r"]
 texture = ExtResource("1_nur44")
@@ -1151,5 +1152,11 @@ position = Vector2(-76, 4)
 
 [node name="td_enemy7" parent="." instance=ExtResource("4_47jxl")]
 position = Vector2(531, 42)
+
+[node name="heart_container" parent="." instance=ExtResource("6_1pcml")]
+position = Vector2(237, -281)
+
+[node name="td_player2" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(22, 54)
 
 [connection signal="body_entered" from="Change_lvl" to="Change_lvl" method="_on_body_entered"]

@@ -182,7 +182,7 @@ position = Vector2(548, 82)
 [node name="coin" parent="." instance=ExtResource("4_qbfyj")]
 position = Vector2(420, 259)
 
-[node name="td_boss" parent="." groups=["Enemy"] instance=ExtResource("5_s8idr")]
+[node name="td_boss" parent="." instance=ExtResource("5_s8idr")]
 position = Vector2(1074, 184)
 
 [node name="Change_lvl" parent="." instance=ExtResource("6_np73x")]
