@@ -1157,6 +1157,60 @@ position = Vector2(531, 42)
 position = Vector2(237, -281)
 
 [node name="td_player2" parent="." instance=ExtResource("2_fajrp")]
-position = Vector2(22, 54)
+position = Vector2(190, 56)
+
+[node name="td_player3" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(212, 55)
+
+[node name="td_player4" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(190, 56)
+
+[node name="td_player5" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(212, 55)
+
+[node name="td_player6" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(190, 56)
+
+[node name="td_player7" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(212, 55)
+
+[node name="td_player8" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(190, 56)
+
+[node name="td_player9" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(212, 55)
+
+[node name="td_player10" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(190, 56)
+
+[node name="td_player11" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(212, 55)
+
+[node name="td_player12" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(190, 56)
+
+[node name="td_player13" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(212, 55)
+
+[node name="td_player14" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(190, 56)
+
+[node name="td_player15" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(212, 55)
+
+[node name="td_player16" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(190, 56)
+
+[node name="td_player17" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(212, 55)
+
+[node name="td_player18" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(190, 56)
+
+[node name="td_player19" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(212, 55)
+
+[node name="td_player20" parent="." instance=ExtResource("2_fajrp")]
+position = Vector2(190, 56)
 
 [connection signal="body_entered" from="Change_lvl" to="Change_lvl" method="_on_body_entered"]
